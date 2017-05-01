@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Title-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController storyboardIdentifier="ConverterId" id="vXZ-lx-hvc" customClass="ConverterViewController" customModule="lab4" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dollars" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IrA-hN-IsS">
+                                <rect key="frame" x="161" y="168" width="53" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Euros" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RBu-B6-OKD">
+                                <rect key="frame" x="165.5" y="229" width="44" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HeE-zY-USD">
+                                <rect key="frame" x="10" y="28" width="355" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pounds" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ryK-dr-vVp">
+                                <rect key="frame" x="158.5" y="290" width="58" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1M6-0V-lgt">
+                                <rect key="frame" x="160" y="98" width="55" height="30"/>
+                                <state key="normal" title="Convert">
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="convertButtonWithSender:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="CgY-sL-Tfh"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="1M6-0V-lgt" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="132-we-Uoo"/>
+                            <constraint firstItem="IrA-hN-IsS" firstAttribute="top" secondItem="1M6-0V-lgt" secondAttribute="bottom" constant="40" id="2Lu-JP-Zpz"/>
+                            <constraint firstItem="ryK-dr-vVp" firstAttribute="baseline" secondItem="RBu-B6-OKD" secondAttribute="baseline" id="4LE-3l-cQS"/>
+                            <constraint firstAttribute="trailing" secondItem="HeE-zY-USD" secondAttribute="trailing" constant="10" id="6VJ-b2-cVR"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="1M6-0V-lgt" secondAttribute="trailing" constant="10" id="6gK-KZ-IwM"/>
+                            <constraint firstItem="1M6-0V-lgt" firstAttribute="top" secondItem="HeE-zY-USD" secondAttribute="bottom" constant="40" id="7sJ-mS-d2q"/>
+                            <constraint firstItem="HeE-zY-USD" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="10" id="C9H-U9-4fU"/>
+                            <constraint firstItem="RBu-B6-OKD" firstAttribute="top" secondItem="IrA-hN-IsS" secondAttribute="bottom" constant="40" id="JFY-9n-70j"/>
+                            <constraint firstItem="ryK-dr-vVp" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="LIO-sB-qeX"/>
+                            <constraint firstItem="RBu-B6-OKD" firstAttribute="baseline" secondItem="IrA-hN-IsS" secondAttribute="baseline" id="Rfj-nY-89l"/>
+                            <constraint firstItem="RBu-B6-OKD" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="SmL-Jf-ZDr"/>
+                            <constraint firstItem="HeE-zY-USD" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" id="WVa-5m-49N"/>
+                            <constraint firstItem="ryK-dr-vVp" firstAttribute="top" secondItem="RBu-B6-OKD" secondAttribute="bottom" constant="40" id="XeB-Js-q6u"/>
+                            <constraint firstItem="1M6-0V-lgt" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" id="dKR-fa-FGO"/>
+                            <constraint firstItem="RBu-B6-OKD" firstAttribute="leading" secondItem="IrA-hN-IsS" secondAttribute="trailing" constant="20" id="fnQ-WI-jhd"/>
+                            <constraint firstItem="IrA-hN-IsS" firstAttribute="leading" secondItem="HeE-zY-USD" secondAttribute="leading" id="m4k-8W-UZi"/>
+                            <constraint firstItem="IrA-hN-IsS" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="v7s-1e-a6j"/>
+                            <constraint firstItem="1M6-0V-lgt" firstAttribute="leading" secondItem="HeE-zY-USD" secondAttribute="trailing" constant="30" id="xYy-19-bkc"/>
+                            <constraint firstItem="ryK-dr-vVp" firstAttribute="leading" secondItem="RBu-B6-OKD" secondAttribute="trailing" constant="20" id="zkQ-DU-FrJ"/>
+                        </constraints>
+                        <variation key="heightClass=compact-widthClass=compact">
+                            <mask key="constraints">
+                                <exclude reference="6VJ-b2-cVR"/>
+                                <exclude reference="132-we-Uoo"/>
+                                <include reference="6gK-KZ-IwM"/>
+                                <exclude reference="7sJ-mS-d2q"/>
+                                <include reference="dKR-fa-FGO"/>
+                                <include reference="xYy-19-bkc"/>
+                                <exclude reference="v7s-1e-a6j"/>
+                                <exclude reference="JFY-9n-70j"/>
+                                <exclude reference="SmL-Jf-ZDr"/>
+                                <exclude reference="LIO-sB-qeX"/>
+                                <exclude reference="XeB-Js-q6u"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact-widthClass=regular">
+                            <mask key="constraints">
+                                <exclude reference="6VJ-b2-cVR"/>
+                                <exclude reference="132-we-Uoo"/>
+                                <include reference="6gK-KZ-IwM"/>
+                                <exclude reference="7sJ-mS-d2q"/>
+                                <include reference="dKR-fa-FGO"/>
+                                <include reference="xYy-19-bkc"/>
+                                <exclude reference="v7s-1e-a6j"/>
+                                <exclude reference="JFY-9n-70j"/>
+                                <exclude reference="SmL-Jf-ZDr"/>
+                                <exclude reference="LIO-sB-qeX"/>
+                                <exclude reference="XeB-Js-q6u"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="6VJ-b2-cVR"/>
+                                <include reference="C9H-U9-4fU"/>
+                                <include reference="132-we-Uoo"/>
+                                <exclude reference="6gK-KZ-IwM"/>
+                                <include reference="7sJ-mS-d2q"/>
+                                <exclude reference="dKR-fa-FGO"/>
+                                <exclude reference="xYy-19-bkc"/>
+                                <exclude reference="m4k-8W-UZi"/>
+                                <include reference="v7s-1e-a6j"/>
+                                <include reference="JFY-9n-70j"/>
+                                <exclude reference="Rfj-nY-89l"/>
+                                <exclude reference="fnQ-WI-jhd"/>
+                                <exclude reference="4LE-3l-cQS"/>
+                                <include reference="XeB-Js-q6u"/>
+                                <exclude reference="zkQ-DU-FrJ"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" title="Title" id="D2L-ou-oNB"/>
+                    <connections>
+                        <outlet property="dollarsLabel" destination="IrA-hN-IsS" id="Zs6-p3-JQS"/>
+                        <outlet property="eurosLabel" destination="RBu-B6-OKD" id="27k-Va-4AU"/>
+                        <outlet property="poundsLabel" destination="ryK-dr-vVp" id="EQY-8I-eak"/>
+                        <outlet property="rublesTextEdit" destination="HeE-zY-USD" id="8cf-J5-Ceg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="640.79999999999995" y="134.48275862068968"/>
+        </scene>
+    </scenes>
+</document>

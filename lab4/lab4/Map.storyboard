@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+    <device id="retina4_7" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Cities-->
+        <scene sceneID="hNz-n2-bh7">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="9pv-A4-QxB" customClass="CitiesListViewController" customModule="lab4" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ia1-K6-d13"/>
+                        <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="Rqq-XD-eIP">
+                                <rect key="frame" x="0.0" y="20" width="667" height="306"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="CityCellIdentifier" id="h6V-wZ-xAm" customClass="CityNameTableViewCell" customModule="lab4">
+                                        <rect key="frame" x="0.0" y="55.5" width="667" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="h6V-wZ-xAm" id="hDK-NO-jPM">
+                                            <rect key="frame" x="0.0" y="0.0" width="634" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cityname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vpf-Vl-gwT">
+                                                    <rect key="frame" x="30" y="11.5" width="72.5" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="vpf-Vl-gwT" firstAttribute="leading" secondItem="hDK-NO-jPM" secondAttribute="leading" constant="30" id="Zev-lE-Jx3"/>
+                                                <constraint firstItem="vpf-Vl-gwT" firstAttribute="centerY" secondItem="hDK-NO-jPM" secondAttribute="centerY" id="bLM-CB-iXW"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="cityNameLabel" destination="vpf-Vl-gwT" id="KJb-XZ-8Ct"/>
+                                            <segue destination="FJd-Lk-fIj" kind="show" identifier="fromCitiesListToMap" id="kQb-o6-bxW"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Rqq-XD-eIP" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="7fK-hR-ms9"/>
+                            <constraint firstAttribute="trailing" secondItem="Rqq-XD-eIP" secondAttribute="trailing" id="RVj-Q3-DKY"/>
+                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="Rqq-XD-eIP" secondAttribute="bottom" id="gQD-K2-omG"/>
+                            <constraint firstItem="Rqq-XD-eIP" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" id="pur-Ty-E8r"/>
+                        </constraints>
+                        <variation key="heightClass=compact-widthClass=compact">
+                            <mask key="constraints">
+                                <exclude reference="RVj-Q3-DKY"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact-widthClass=regular">
+                            <mask key="constraints">
+                                <exclude reference="RVj-Q3-DKY"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Weather" id="3tH-Qe-K4M"/>
+                    <navigationItem key="navigationItem" title="Cities" id="LaX-94-L2Z"/>
+                    <connections>
+                        <outlet property="citiesTableView" destination="Rqq-XD-eIP" id="g3g-WF-509"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1688.8" y="-320.68965517241384"/>
+        </scene>
+        <!--City-->
+        <scene sceneID="XW1-76-NVV">
+            <objects>
+                <viewController id="FJd-Lk-fIj" customClass="CityMapViewController" customModule="lab4" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hSi-Aw-KRk"/>
+                        <viewControllerLayoutGuide type="bottom" id="jv9-Pt-NT1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Byo-Mp-oCu">
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="WN7-Po-ZmK">
+                                <rect key="frame" x="0.0" y="20" width="667" height="306"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="WN7-Po-ZmK" firstAttribute="top" secondItem="hSi-Aw-KRk" secondAttribute="bottom" id="7gc-hp-39R"/>
+                            <constraint firstAttribute="trailing" secondItem="WN7-Po-ZmK" secondAttribute="trailing" id="W5Q-bs-5Rh"/>
+                            <constraint firstItem="jv9-Pt-NT1" firstAttribute="top" secondItem="WN7-Po-ZmK" secondAttribute="bottom" id="b8y-2G-98u"/>
+                            <constraint firstItem="WN7-Po-ZmK" firstAttribute="leading" secondItem="Byo-Mp-oCu" secondAttribute="leading" id="l79-v4-RmO"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="City" id="4Nz-cL-bID"/>
+                    <connections>
+                        <outlet property="mapView" destination="WN7-Po-ZmK" id="qrq-EN-H7w"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GMx-WR-Sis" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2604" y="-321"/>
+        </scene>
+        <!--Map-->
+        <scene sceneID="wg7-f3-ORb">
+            <objects>
+                <viewController id="8rJ-Kc-sve" customClass="MapViewController" customModule="lab4" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="L7p-HK-0SC"/>
+                        <viewControllerLayoutGuide type="bottom" id="Djb-ko-YwX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW">
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="7sa-fq-h78">
+                                <rect key="frame" x="0.0" y="20" width="667" height="306"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="7sa-fq-h78" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" id="4Br-lV-QlU"/>
+                            <constraint firstItem="Djb-ko-YwX" firstAttribute="top" secondItem="7sa-fq-h78" secondAttribute="bottom" id="Yid-6B-kQo"/>
+                            <constraint firstAttribute="trailing" secondItem="7sa-fq-h78" secondAttribute="trailing" id="pNP-J9-jep"/>
+                            <constraint firstItem="7sa-fq-h78" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leading" id="ujk-Hq-dFj"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Map" id="cPa-gy-q4n"/>
+                    <connections>
+                        <outlet property="mapView" destination="7sa-fq-h78" id="2XQ-wO-03i"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="750" y="360"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="yl2-sM-qoP">
+            <objects>
+                <tabBarController storyboardIdentifier="MapId" automaticallyAdjustsScrollViewInsets="NO" id="49e-Tb-3d3" sceneMemberID="viewController">
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
+                        <rect key="frame" x="0.0" y="975" width="768" height="49"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="hVQ-YY-5KO"/>
+                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="uk2-0p-kDw"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="0.0" y="0.0"/>
+        </scene>
+    </scenes>
+</document>

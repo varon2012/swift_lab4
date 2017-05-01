@@ -1,0 +1,34 @@
+{
+    "games" : [
+        {
+               "title" : "GTA 5",
+               "shortDescription" : "Grand Theft Auto V is an action-adventure video game developed by Rockstar North",
+               "fullDescription" : "Grand Theft Auto V is an action-adventure video game developed by Rockstar North. Grand Theft Auto V is an action-adventure video game developed by Rockstar North. Grand Theft Auto V is an action-adventure video game developed by Rockstar North",
+               "image" : "gta"
+        },
+        {
+               "title" : "Overwatch",
+               "shortDescription" : "Overwatch is a team-based multiplayer first-person shooter video game",
+               "fullDescription" : "Overwatch is a team-based multiplayer first-person shooter video game. Overwatch is a team-based multiplayer first-person shooter video game",
+               "image" : "overwatch"
+        },
+        {
+               "title" : "Mass Effect",
+               "shortDescription" : "Mass Effect: Andromeda is an action role-playing video game",
+               "fullDescription" : "Mass Effect: Andromeda is an action role-playing video game. Mass Effect: Andromeda is an action role-playing video game. Mass Effect: Andromeda is an action role-playing video game",
+               "image" : "mass_effect"
+        },
+        {
+               "title" : "CS:GO",
+               "shortDescription" : "Counter-Strike: Global Offensive (abbreviated as CS:GO) is a multiplayer first- person shooter video ",
+               "fullDescription" : "Counter-Strike: Global Offensive (abbreviated as CS:GO) is a multiplayer first- person shooter video . Counter-Strike: Global Offensive (abbreviated as CS:GO) is a multiplayer first- person shooter video . Counter-Strike: Global Offensive (abbreviated as CS:GO) is a multiplayer first- person shooter video ",
+               "image" : "csgo",
+        },
+        {
+               "title" : "Half Life 3",
+               "shortDescription" : "The Game that will never exist.",
+               "fullDescription" : "The Game that will never exist.. The Game that will never exist.. The Game that will never exist..",
+               "image" : "hf3"
+        }
+    ]
+}

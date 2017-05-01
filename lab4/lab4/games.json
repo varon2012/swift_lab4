@@ -1,0 +1,34 @@
+{
+    "games" : [
+        {
+               "title" : "GTA 5",
+               "shortDescription" : "short",
+               "fullDescription" : "full",
+               "image" : "game1"
+        },
+        {
+               "title" : "GTA 4",
+               "shortDescription" : "short",
+               "fullDescription" : "full",
+               "image" : "game1"
+        },
+        {
+               "title" : "GTA 3",
+               "shortDescription" : "short",
+               "fullDescription" : "full",
+               "image" : "game1"
+        },
+        {
+               "title" : "GTA 2",
+               "shortDescription" : "short",
+               "fullDescription" : "full",
+               "image" : "game1",
+        },
+        {
+               "title" : "GTA 1",
+               "shortDescription" : "short",
+               "fullDescription" : "full",
+               "image" : "game1"
+        }
+    ]
+}
