@@ -8,12 +8,18 @@
 
 import UIKit
 import Alamofire
+import MapKit
 
-class CitiesListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class CitiesListViewController: UIViewController, MKMapViewDelegate, UITableViewDelegate, UITableViewDataSource {
     
     let cities = ["Minsk", "Moscow", "London", "Berlin", "Rome", "Paris"];
     
+    @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var citiesTableView: UITableView!
+    
+    var wheather : WheatherModel!;
+    let regionRadius : CLLocationDistance = 10000;
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         citiesTableView.delegate = self;
@@ -54,6 +60,39 @@ class CitiesListViewController: UIViewController, UITableViewDelegate, UITableVi
         }
     }
     
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if (UIDevice.current.orientation.isPortrait){
+            return true;
+        }
+        else{
+            let index = citiesTableView.indexPathForSelectedRow?.row;
+            let city = cities[index!];
+            showOnMap(city: city);
+            return false;
+        }
+    }
+    
+    func showOnMap(city : String){
+        performRequest(city: city){
+            response in
+            self.wheather = response;
+            let initialLocation = CLLocation(latitude: self.wheather.latitude, longitude: self.wheather.longitude);
+            self.centerMapOnLocation(location: initialLocation);
+            let annotation = MKPointAnnotation();
+            annotation.title = self.wheather.city;
+            annotation.subtitle = "Current wheather is: " + String(self.wheather.temp) + " C";
+            annotation.coordinate = CLLocationCoordinate2D(latitude: self.wheather.latitude, longitude: self.wheather.longitude);
+            self.mapView.delegate = self;
+            self.mapView.addAnnotation(annotation);
+            self.mapView.selectAnnotation(annotation, animated: true);
+        }
+    }
+    
+    func centerMapOnLocation(location : CLLocation){
+        let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate, regionRadius * 2.0, regionRadius * 2.0);
+        mapView.setRegion(coordinateRegion, animated: true);
+    }
+    
     func performRequest(city : String, completionHandler : ((WheatherModel)->Void)?){
         let request = "https://api.apixu.com/v1/current.json?key=152f26ba579c4fb5ba3204721170504&q=" + city;
         let url = URL(string : request);
@@ -69,5 +108,6 @@ class CitiesListViewController: UIViewController, UITableViewDelegate, UITableVi
             completionHandler!(wheather);
         })
     }
+
 }
 
