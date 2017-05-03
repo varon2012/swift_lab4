@@ -29,7 +29,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, UIGestureRecognize
         //gr.delegate = self;
         mapView.addGestureRecognizer(gr);
         let initialLocation = CLLocation(latitude: 39, longitude: -77)
-        centerMapOnLocation(location: initialLocation);
+        centerMapOnLocation(location: initialLocation, radius : regionRadius);
         // Do any additional setup after loading the view.
     }
     func tapOnMap(sender: UILongPressGestureRecognizer){
@@ -52,6 +52,9 @@ class MapViewController: UIViewController, MKMapViewDelegate, UIGestureRecognize
                 self.annotaion.subtitle = "Current temp is: " + String(wheather.temp) + "C";
                 self.mapView.addAnnotation(self.annotaion);
                 self.mapView.selectAnnotation(self.annotaion, animated: true);
+                let initialLocation = CLLocation(latitude: wheather.latitude, longitude: wheather.longitude);
+                let radius : CLLocationDistance = 10000;
+                self.centerMapOnLocation(location: initialLocation, radius : radius);
             }
         }
     }
@@ -123,8 +126,8 @@ class MapViewController: UIViewController, MKMapViewDelegate, UIGestureRecognize
         catch{}
     }
     
-    func centerMapOnLocation(location : CLLocation){
-        let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate, regionRadius * 2.0, regionRadius * 2.0);
+    func centerMapOnLocation(location : CLLocation, radius : CLLocationDistance){
+        let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate, radius * 2.0, radius * 2.0);
         mapView.setRegion(coordinateRegion, animated: true);
     }
     /*
